@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6e7ffc9c3b409332ce3479086dbe225d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="position: fixed;
+            top: 10px; left: 50px; width: 420px; height: 80px;
+            background-color: white; border:2px solid grey; z-index:9999;
+            font-size:16px; padding: 10px; border-radius: 5px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.3);">
+    <b>🗺️ Tasa de Deserción Escolar por Departamento</b><br>
+    <span style="font-size:12px; color: #555;">
+        Bolivia — EH2025 (Población 6-18 años, n=9,895)
+    </span>
+</div>
+    
+            <div class="folium-map" id="map_6e7ffc9c3b409332ce3479086dbe225d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6e7ffc9c3b409332ce3479086dbe225d = L.map(
+                "map_6e7ffc9c3b409332ce3479086dbe225d",
+                {
+                    center: [-16.2902, -63.5887],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+-90,
+-180,
+],
+[
+90,
+180,
+],
+],
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_28e06929850f36d70ff6780a053e483f = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 4,
+  "maxZoom": 12,
+  "maxNativeZoom": 12,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_28e06929850f36d70ff6780a053e483f.addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            map_6e7ffc9c3b409332ce3479086dbe225d.fitBounds(
+                [[-22.9, -69.7], [-9.7, -57.5]],
+                {}
+            );
+        
+    
+            var circle_marker_1b442ae58a124426f36ce391b061e297 = L.circleMarker(
+                [-17.7833, -63.1821],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#800026ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.554486605993354, "stroke": true, "weight": 1}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+        var popup_f2de010f004cdf2d93ef6f0e86f393af = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_9996f6b0260c05c1f18ae6cb13e3f7cc = $(`<div id="html_9996f6b0260c05c1f18ae6cb13e3f7cc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 5px 0; color: #2c3e50;">Santa Cruz</h4>             <hr style="margin: 5px 0;">             <b>Tasa de deserción:</b> 4.88%<br>             <b>No asiste:</b> 94 niños/as<br>             <b>Total analizado:</b> 1,926 niños/as         </div>         </div>`)[0];
+                popup_f2de010f004cdf2d93ef6f0e86f393af.setContent(html_9996f6b0260c05c1f18ae6cb13e3f7cc);
+            
+        
+
+        circle_marker_1b442ae58a124426f36ce391b061e297.bindPopup(popup_f2de010f004cdf2d93ef6f0e86f393af)
+        ;
+
+        
+    
+    
+            circle_marker_1b442ae58a124426f36ce391b061e297.bindTooltip(
+                `<div>
+                     Santa Cruz: 4.88%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_74a43383d472c1ad8c1405441715f5ce = L.marker(
+                [-17.7833, -63.1821],
+                {
+}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            var div_icon_b2a5729782d111fb79a780d24be58614 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"font-family: Arial; font-size: 11px; font-weight: bold;\n                            color: #2c3e50; text-shadow: 1px 1px 2px white;\n                            text-align: center; white-space: nowrap;\"\u003e\n                    Santa Cruz\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_74a43383d472c1ad8c1405441715f5ce.setIcon(div_icon_b2a5729782d111fb79a780d24be58614);
+            
+    
+            var circle_marker_51d047783726bffc77cb04fc5fbe746c = L.circleMarker(
+                [-11.0333, -68.7667],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a60026ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.150862032359617, "stroke": true, "weight": 1}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+        var popup_439e1afb235daebb38111161afb378d1 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f2a267b706cf283354bea98f986967a1 = $(`<div id="html_f2a267b706cf283354bea98f986967a1" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 5px 0; color: #2c3e50;">Pando</h4>             <hr style="margin: 5px 0;">             <b>Tasa de deserción:</b> 4.66%<br>             <b>No asiste:</b> 30 niños/as<br>             <b>Total analizado:</b> 644 niños/as         </div>         </div>`)[0];
+                popup_439e1afb235daebb38111161afb378d1.setContent(html_f2a267b706cf283354bea98f986967a1);
+            
+        
+
+        circle_marker_51d047783726bffc77cb04fc5fbe746c.bindPopup(popup_439e1afb235daebb38111161afb378d1)
+        ;
+
+        
+    
+    
+            circle_marker_51d047783726bffc77cb04fc5fbe746c.bindTooltip(
+                `<div>
+                     Pando: 4.66%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c4c18dd4dc195d0ef27988de017a41cf = L.marker(
+                [-11.0333, -68.7667],
+                {
+}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            var div_icon_f4360781bfe996c9a25d82912653a577 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"font-family: Arial; font-size: 11px; font-weight: bold;\n                            color: #2c3e50; text-shadow: 1px 1px 2px white;\n                            text-align: center; white-space: nowrap;\"\u003e\n                    Pando\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_c4c18dd4dc195d0ef27988de017a41cf.setIcon(div_icon_f4360781bfe996c9a25d82912653a577);
+            
+    
+            var circle_marker_dfd488a4adfcd4616924f1a7b40cd53d = L.circleMarker(
+                [-19.0333, -65.2627],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3122ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.583005244258363, "stroke": true, "weight": 1}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+        var popup_8d4d9a8f15b18bc736de8fc8130b1fad = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c1343d102f95794021425cf982986dbf = $(`<div id="html_c1343d102f95794021425cf982986dbf" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 5px 0; color: #2c3e50;">Chuquisaca</h4>             <hr style="margin: 5px 0;">             <b>Tasa de deserción:</b> 4.00%<br>             <b>No asiste:</b> 28 niños/as<br>             <b>Total analizado:</b> 700 niños/as         </div>         </div>`)[0];
+                popup_8d4d9a8f15b18bc736de8fc8130b1fad.setContent(html_c1343d102f95794021425cf982986dbf);
+            
+        
+
+        circle_marker_dfd488a4adfcd4616924f1a7b40cd53d.bindPopup(popup_8d4d9a8f15b18bc736de8fc8130b1fad)
+        ;
+
+        
+    
+    
+            circle_marker_dfd488a4adfcd4616924f1a7b40cd53d.bindTooltip(
+                `<div>
+                     Chuquisaca: 4.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_bcdc07ddd286f917736b58468dfc0b6c = L.marker(
+                [-19.0333, -65.2627],
+                {
+}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            var div_icon_2f211d3c7482f76722dae577992b16ab = L.divIcon({
+  "html": "\n                \u003cdiv style=\"font-family: Arial; font-size: 11px; font-weight: bold;\n                            color: #2c3e50; text-shadow: 1px 1px 2px white;\n                            text-align: center; white-space: nowrap;\"\u003e\n                    Chuquisaca\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_bcdc07ddd286f917736b58468dfc0b6c.setIcon(div_icon_2f211d3c7482f76722dae577992b16ab);
+            
+    
+            var circle_marker_9a3e82fe35cb5c7c9a294d59edc16efd = L.circleMarker(
+                [-14.8333, -64.9],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f43d25ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.688311372709911, "stroke": true, "weight": 1}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+        var popup_0822ba9d74984bf1474be12647088114 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e8b0d7864af3099caeda1a5c511ca373 = $(`<div id="html_e8b0d7864af3099caeda1a5c511ca373" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 5px 0; color: #2c3e50;">Beni</h4>             <hr style="margin: 5px 0;">             <b>Tasa de deserción:</b> 3.92%<br>             <b>No asiste:</b> 28 niños/as<br>             <b>Total analizado:</b> 714 niños/as         </div>         </div>`)[0];
+                popup_0822ba9d74984bf1474be12647088114.setContent(html_e8b0d7864af3099caeda1a5c511ca373);
+            
+        
+
+        circle_marker_9a3e82fe35cb5c7c9a294d59edc16efd.bindPopup(popup_0822ba9d74984bf1474be12647088114)
+        ;
+
+        
+    
+    
+            circle_marker_9a3e82fe35cb5c7c9a294d59edc16efd.bindTooltip(
+                `<div>
+                     Beni: 3.92%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_213855672c42237613878712295ddf70 = L.marker(
+                [-14.8333, -64.9],
+                {
+}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            var div_icon_82950b746a4b4f8a6e3fc607c11112c5 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"font-family: Arial; font-size: 11px; font-weight: bold;\n                            color: #2c3e50; text-shadow: 1px 1px 2px white;\n                            text-align: center; white-space: nowrap;\"\u003e\n                    Beni\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_213855672c42237613878712295ddf70.setIcon(div_icon_82950b746a4b4f8a6e3fc607c11112c5);
+            
+    
+            var circle_marker_37ebe7505dc3339f26a587b106a90769 = L.circleMarker(
+                [-21.5355, -64.7296],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fd7936ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.384603988597737, "stroke": true, "weight": 1}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+        var popup_ef5968052eec58d847f2b8f0c904c123 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e0f61169fe53619488a621b01a21f512 = $(`<div id="html_e0f61169fe53619488a621b01a21f512" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 5px 0; color: #2c3e50;">Tarija</h4>             <hr style="margin: 5px 0;">             <b>Tasa de deserción:</b> 3.56%<br>             <b>No asiste:</b> 24 niños/as<br>             <b>Total analizado:</b> 674 niños/as         </div>         </div>`)[0];
+                popup_ef5968052eec58d847f2b8f0c904c123.setContent(html_e0f61169fe53619488a621b01a21f512);
+            
+        
+
+        circle_marker_37ebe7505dc3339f26a587b106a90769.bindPopup(popup_ef5968052eec58d847f2b8f0c904c123)
+        ;
+
+        
+    
+    
+            circle_marker_37ebe7505dc3339f26a587b106a90769.bindTooltip(
+                `<div>
+                     Tarija: 3.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_255133a5f32c20ea975d8ef42de0af02 = L.marker(
+                [-21.5355, -64.7296],
+                {
+}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            var div_icon_76fe0960433284de4aa0288853a93990 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"font-family: Arial; font-size: 11px; font-weight: bold;\n                            color: #2c3e50; text-shadow: 1px 1px 2px white;\n                            text-align: center; white-space: nowrap;\"\u003e\n                    Tarija\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_255133a5f32c20ea975d8ef42de0af02.setIcon(div_icon_76fe0960433284de4aa0288853a93990);
+            
+    
+            var circle_marker_75cd85e0ad8a3bbfe018a24821c34bbd = L.circleMarker(
+                [-19.5836, -65.7531],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fd7e37ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.851727973000429, "stroke": true, "weight": 1}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+        var popup_f14943b13d5f94e33821ef792aa87ef2 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_81c9bd6793bb8d98c2c2faea20335aaa = $(`<div id="html_81c9bd6793bb8d98c2c2faea20335aaa" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 5px 0; color: #2c3e50;">Potosí</h4>             <hr style="margin: 5px 0;">             <b>Tasa de deserción:</b> 3.53%<br>             <b>No asiste:</b> 26 niños/as<br>             <b>Total analizado:</b> 736 niños/as         </div>         </div>`)[0];
+                popup_f14943b13d5f94e33821ef792aa87ef2.setContent(html_81c9bd6793bb8d98c2c2faea20335aaa);
+            
+        
+
+        circle_marker_75cd85e0ad8a3bbfe018a24821c34bbd.bindPopup(popup_f14943b13d5f94e33821ef792aa87ef2)
+        ;
+
+        
+    
+    
+            circle_marker_75cd85e0ad8a3bbfe018a24821c34bbd.bindTooltip(
+                `<div>
+                     Potosí: 3.53%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fcae161878fd54ef84f96a260fd4a5cf = L.marker(
+                [-19.5836, -65.7531],
+                {
+}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            var div_icon_75aae9c84a9038f31946101e595f9ea6 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"font-family: Arial; font-size: 11px; font-weight: bold;\n                            color: #2c3e50; text-shadow: 1px 1px 2px white;\n                            text-align: center; white-space: nowrap;\"\u003e\n                    Potos\u00ed\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_fcae161878fd54ef84f96a260fd4a5cf.setIcon(div_icon_75aae9c84a9038f31946101e595f9ea6);
+            
+    
+            var circle_marker_d9be6a0c5224cde64067d91db8e9cda8 = L.circleMarker(
+                [-17.9833, -67.15],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fecf6bff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.643307756520057, "stroke": true, "weight": 1}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+        var popup_aec84526c7d9f5abf4d3aef0d50869bf = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_fb7595d83bce2361f0be8c5a9ca167b8 = $(`<div id="html_fb7595d83bce2361f0be8c5a9ca167b8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 5px 0; color: #2c3e50;">Oruro</h4>             <hr style="margin: 5px 0;">             <b>Tasa de deserción:</b> 2.82%<br>             <b>No asiste:</b> 20 niños/as<br>             <b>Total analizado:</b> 708 niños/as         </div>         </div>`)[0];
+                popup_aec84526c7d9f5abf4d3aef0d50869bf.setContent(html_fb7595d83bce2361f0be8c5a9ca167b8);
+            
+        
+
+        circle_marker_d9be6a0c5224cde64067d91db8e9cda8.bindPopup(popup_aec84526c7d9f5abf4d3aef0d50869bf)
+        ;
+
+        
+    
+    
+            circle_marker_d9be6a0c5224cde64067d91db8e9cda8.bindTooltip(
+                `<div>
+                     Oruro: 2.82%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_44ee097dccf4f5e0c8580abf34a300b4 = L.marker(
+                [-17.9833, -67.15],
+                {
+}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            var div_icon_6bdef0f17b0a5f7b17ffe855c7da4096 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"font-family: Arial; font-size: 11px; font-weight: bold;\n                            color: #2c3e50; text-shadow: 1px 1px 2px white;\n                            text-align: center; white-space: nowrap;\"\u003e\n                    Oruro\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_44ee097dccf4f5e0c8580abf34a300b4.setIcon(div_icon_6bdef0f17b0a5f7b17ffe855c7da4096);
+            
+    
+            var circle_marker_fb9cecd44b5124a26ecdab2c92aad442 = L.circleMarker(
+                [-16.5, -68.15],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffe48dff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.973665961010276, "stroke": true, "weight": 1}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+        var popup_4232618a0a1333ce2dfae6a9742b5325 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_2b0638c0cd83d4075755fcda58662920 = $(`<div id="html_2b0638c0cd83d4075755fcda58662920" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 5px 0; color: #2c3e50;">La Paz</h4>             <hr style="margin: 5px 0;">             <b>Tasa de deserción:</b> 2.53%<br>             <b>No asiste:</b> 57 niños/as<br>             <b>Total analizado:</b> 2,250 niños/as         </div>         </div>`)[0];
+                popup_4232618a0a1333ce2dfae6a9742b5325.setContent(html_2b0638c0cd83d4075755fcda58662920);
+            
+        
+
+        circle_marker_fb9cecd44b5124a26ecdab2c92aad442.bindPopup(popup_4232618a0a1333ce2dfae6a9742b5325)
+        ;
+
+        
+    
+    
+            circle_marker_fb9cecd44b5124a26ecdab2c92aad442.bindTooltip(
+                `<div>
+                     La Paz: 2.53%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0bc66c1e55bfcd0c8658756bc4317d89 = L.marker(
+                [-16.5, -68.15],
+                {
+}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            var div_icon_749946e013573bb99350733959dc4d2e = L.divIcon({
+  "html": "\n                \u003cdiv style=\"font-family: Arial; font-size: 11px; font-weight: bold;\n                            color: #2c3e50; text-shadow: 1px 1px 2px white;\n                            text-align: center; white-space: nowrap;\"\u003e\n                    La Paz\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_0bc66c1e55bfcd0c8658756bc4317d89.setIcon(div_icon_749946e013573bb99350733959dc4d2e);
+            
+    
+            var circle_marker_ec33b9b2e6849c0866a7f9b2b373caf9 = L.circleMarker(
+                [-17.3895, -66.1568],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffccff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.712415473121887, "stroke": true, "weight": 1}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+        var popup_dc336d7d979a38ffe008c5f2f6d9817e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_7409f96588251a7fdedc53ab9d590508 = $(`<div id="html_7409f96588251a7fdedc53ab9d590508" style="width: 100.0%; height: 100.0%;">         <div style="font-family: Arial; width: 220px;">             <h4 style="margin: 5px 0; color: #2c3e50;">Cochabamba</h4>             <hr style="margin: 5px 0;">             <b>Tasa de deserción:</b> 2.01%<br>             <b>No asiste:</b> 31 niños/as<br>             <b>Total analizado:</b> 1,543 niños/as         </div>         </div>`)[0];
+                popup_dc336d7d979a38ffe008c5f2f6d9817e.setContent(html_7409f96588251a7fdedc53ab9d590508);
+            
+        
+
+        circle_marker_ec33b9b2e6849c0866a7f9b2b373caf9.bindPopup(popup_dc336d7d979a38ffe008c5f2f6d9817e)
+        ;
+
+        
+    
+    
+            circle_marker_ec33b9b2e6849c0866a7f9b2b373caf9.bindTooltip(
+                `<div>
+                     Cochabamba: 2.01%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1ace67046f97a38dba07459f3f25240e = L.marker(
+                [-17.3895, -66.1568],
+                {
+}
+            ).addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+            var div_icon_66ab2b0b28d8bb9e8d1ef30da940a169 = L.divIcon({
+  "html": "\n                \u003cdiv style=\"font-family: Arial; font-size: 11px; font-weight: bold;\n                            color: #2c3e50; text-shadow: 1px 1px 2px white;\n                            text-align: center; white-space: nowrap;\"\u003e\n                    Cochabamba\n                \u003c/div\u003e\n            ",
+  "className": "empty",
+});
+        
+    
+                marker_1ace67046f97a38dba07459f3f25240e.setIcon(div_icon_66ab2b0b28d8bb9e8d1ef30da940a169);
+            
+    
+    var color_map_4fd8290d7a16f4be4169d9cd8886e055 = {};
+
+    
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.color = d3.scale.threshold()
+              .domain([2.01, 2.015751503006012, 2.021503006012024, 2.027254509018036, 2.033006012024048, 2.03875751503006, 2.044509018036072, 2.050260521042084, 2.056012024048096, 2.061763527054108, 2.06751503006012, 2.073266533066132, 2.079018036072144, 2.084769539078156, 2.090521042084168, 2.09627254509018, 2.102024048096192, 2.107775551102204, 2.113527054108216, 2.119278557114228, 2.12503006012024, 2.130781563126252, 2.136533066132264, 2.142284569138276, 2.148036072144288, 2.1537875751503, 2.159539078156312, 2.1652905811623246, 2.1710420841683367, 2.1767935871743487, 2.1825450901803607, 2.1882965931863727, 2.1940480961923847, 2.1997995991983967, 2.2055511022044088, 2.2113026052104208, 2.217054108216433, 2.222805611222445, 2.228557114228457, 2.234308617234469, 2.240060120240481, 2.245811623246493, 2.251563126252505, 2.257314629258517, 2.263066132264529, 2.268817635270541, 2.274569138276553, 2.280320641282565, 2.286072144288577, 2.291823647294589, 2.297575150300601, 2.303326653306613, 2.309078156312625, 2.314829659318637, 2.320581162324649, 2.326332665330661, 2.332084168336673, 2.337835671342685, 2.343587174348697, 2.349338677354709, 2.355090180360721, 2.360841683366733, 2.366593186372745, 2.372344689378757, 2.378096192384769, 2.3838476953907812, 2.3895991983967932, 2.3953507014028053, 2.4011022044088173, 2.4068537074148293, 2.4126052104208413, 2.4183567134268533, 2.424108216432866, 2.429859719438878, 2.4356112224448894, 2.441362725450902, 2.447114228456914, 2.452865731462926, 2.458617234468938, 2.46436873747495, 2.470120240480962, 2.475871743486974, 2.481623246492986, 2.487374749498998, 2.49312625250501, 2.498877755511022, 2.504629258517034, 2.510380761523046, 2.516132264529058, 2.52188376753507, 2.527635270541082, 2.533386773547094, 2.539138276553106, 2.544889779559118, 2.55064128256513, 2.556392785571142, 2.562144288577154, 2.567895791583166, 2.573647294589178, 2.57939879759519, 2.585150300601202, 2.5909018036072142, 2.5966533066132262, 2.6024048096192383, 2.6081563126252503, 2.6139078156312623, 2.6196593186372743, 2.6254108216432863, 2.6311623246492983, 2.6369138276553103, 2.6426653306613224, 2.6484168336673344, 2.6541683366733464, 2.6599198396793584, 2.6656713426853704, 2.6714228456913824, 2.6771743486973945, 2.6829258517034065, 2.6886773547094185, 2.6944288577154305, 2.7001803607214425, 2.7059318637274545, 2.7116833667334665, 2.7174348697394786, 2.7231863727454906, 2.7289378757515026, 2.7346893787575146, 2.7404408817635266, 2.7461923847695386, 2.7519438877755507, 2.757695390781563, 2.763446893787575, 2.769198396793587, 2.774949899799599, 2.780701402805611, 2.7864529058116227, 2.792204408817635, 2.7979559118236472, 2.8037074148296592, 2.8094589178356713, 2.8152104208416833, 2.8209619238476953, 2.8267134268537073, 2.8324649298597193, 2.8382164328657313, 2.8439679358717433, 2.8497194388777554, 2.8554709418837674, 2.8612224448897794, 2.8669739478957914, 2.8727254509018034, 2.8784769539078154, 2.8842284569138275, 2.8899799599198395, 2.8957314629258515, 2.9014829659318635, 2.9072344689378755, 2.9129859719438875, 2.9187374749498995, 2.9244889779559116, 2.9302404809619236, 2.9359919839679356, 2.9417434869739476, 2.9474949899799596, 2.9532464929859716, 2.9589979959919837, 2.9647494989979957, 2.9705010020040077, 2.97625250501002, 2.982004008016032, 2.987755511022044, 2.993507014028056, 2.999258517034068, 3.0050100200400798, 3.0107615230460922, 3.0165130260521043, 3.0222645290581163, 3.0280160320641283, 3.0337675350701403, 3.0395190380761523, 3.0452705410821643, 3.0510220440881763, 3.0567735470941884, 3.0625250501002004, 3.0682765531062124, 3.0740280561122244, 3.0797795591182364, 3.0855310621242484, 3.0912825651302605, 3.0970340681362725, 3.1027855711422845, 3.1085370741482965, 3.1142885771543085, 3.1200400801603205, 3.1257915831663325, 3.1315430861723446, 3.1372945891783566, 3.1430460921843686, 3.1487975951903806, 3.1545490981963926, 3.1603006012024046, 3.1660521042084167, 3.1718036072144287, 3.1775551102204407, 3.1833066132264527, 3.1890581162324647, 3.1948096192384767, 3.2005611222444887, 3.2063126252505008, 3.2120641282565128, 3.217815631262525, 3.223567134268537, 3.229318637274549, 3.235070140280561, 3.240821643286573, 3.246573146292585, 3.252324649298597, 3.258076152304609, 3.263827655310621, 3.269579158316633, 3.275330661322645, 3.281082164328657, 3.286833667334669, 3.292585170340681, 3.298336673346693, 3.304088176352705, 3.309839679358717, 3.315591182364729, 3.321342685370741, 3.327094188376753, 3.332845691382765, 3.338597194388777, 3.344348697394789, 3.350100200400801, 3.3558517034068136, 3.3616032064128256, 3.3673547094188376, 3.3731062124248496, 3.3788577154308617, 3.3846092184368737, 3.3903607214428857, 3.3961122244488977, 3.4018637274549097, 3.4076152304609217, 3.4133667334669333, 3.4191182364729453, 3.4248697394789573, 3.43062124248497, 3.436372745490982, 3.442124248496994, 3.447875751503006, 3.453627254509018, 3.45937875751503, 3.465130260521042, 3.470881763527054, 3.476633266533066, 3.482384769539078, 3.48813627254509, 3.493887775551102, 3.4996392785571144, 3.5053907815631264, 3.5111422845691385, 3.5168937875751505, 3.5226452905811625, 3.5283967935871745, 3.5341482965931865, 3.5398997995991985, 3.5456513026052106, 3.5514028056112226, 3.557154308617234, 3.562905811623246, 3.568657314629258, 3.5744088176352706, 3.5801603206412826, 3.5859118236472947, 3.5916633266533067, 3.5974148296593187, 3.6031663326653307, 3.6089178356713427, 3.6146693386773547, 3.6204208416833668, 3.6261723446893788, 3.631923847695391, 3.637675350701403, 3.643426853707415, 3.649178356713427, 3.654929859719439, 3.660681362725451, 3.666432865731463, 3.672184368737475, 3.677935871743487, 3.683687374749499, 3.689438877755511, 3.695190380761523, 3.700941883767535, 3.706693386773547, 3.712444889779559, 3.718196392785571, 3.723947895791583, 3.729699398797595, 3.735450901803607, 3.741202404809619, 3.746953907815631, 3.752705410821643, 3.758456913827655, 3.764208416833667, 3.769959919839679, 3.775711422845691, 3.781462925851703, 3.787214428857715, 3.792965931863727, 3.7987174348697392, 3.8044689378757512, 3.8102204408817633, 3.8159719438877753, 3.8217234468937873, 3.8274749498997993, 3.8332264529058113, 3.8389779559118233, 3.8447294589178354, 3.8504809619238474, 3.8562324649298594, 3.8619839679358714, 3.8677354709418834, 3.8734869739478954, 3.8792384769539074, 3.8849899799599195, 3.8907414829659315, 3.8964929859719435, 3.9022444889779555, 3.9079959919839675, 3.9137474949899795, 3.9194989979959916, 3.9252505010020036, 3.9310020040080156, 3.936753507014028, 3.94250501002004, 3.948256513026052, 3.954008016032064, 3.959759519038076, 3.965511022044088, 3.9712625250501, 3.977014028056112, 3.982765531062124, 3.988517034068136, 3.994268537074148, 4.00002004008016, 4.005771543086172, 4.011523046092185, 4.017274549098197, 4.023026052104209, 4.028777555110221, 4.034529058116233, 4.040280561122245, 4.046032064128257, 4.051783567134269, 4.057535070140281, 4.063286573146293, 4.069038076152305, 4.074789579158317, 4.080541082164329, 4.086292585170341, 4.092044088176353, 4.097795591182365, 4.103547094188377, 4.109298597194389, 4.115050100200401, 4.120801603206413, 4.126553106212425, 4.132304609218437, 4.138056112224449, 4.143807615230461, 4.149559118236473, 4.155310621242485, 4.161062124248497, 4.166813627254509, 4.172565130260521, 4.178316633266533, 4.184068136272545, 4.189819639278557, 4.195571142284569, 4.201322645290581, 4.207074148296593, 4.212825651302605, 4.218577154308617, 4.224328657314629, 4.230080160320641, 4.235831663326653, 4.241583166332665, 4.247334669338677, 4.253086172344689, 4.258837675350701, 4.264589178356713, 4.270340681362725, 4.276092184368737, 4.281843687374749, 4.287595190380761, 4.293346693386773, 4.2990981963927855, 4.3048496993987975, 4.3106012024048095, 4.3163527054108215, 4.3221042084168335, 4.3278557114228455, 4.3336072144288575, 4.33935871743487, 4.345110220440882, 4.350861723446894, 4.356613226452906, 4.362364729458918, 4.36811623246493, 4.373867735470942, 4.379619238476954, 4.385370741482966, 4.391122244488978, 4.39687374749499, 4.402625250501002, 4.408376753507014, 4.414128256513026, 4.419879759519038, 4.42563126252505, 4.431382765531062, 4.437134268537074, 4.442885771543086, 4.448637274549098, 4.45438877755511, 4.460140280561122, 4.465891783567134, 4.471643286573146, 4.477394789579158, 4.48314629258517, 4.488897795591182, 4.494649298597194, 4.500400801603206, 4.506152304609218, 4.51190380761523, 4.517655310621242, 4.523406813627254, 4.529158316633266, 4.534909819639278, 4.54066132264529, 4.546412825651302, 4.552164328657314, 4.557915831663326, 4.563667334669338, 4.56941883767535, 4.575170340681362, 4.580921843687374, 4.586673346693386, 4.592424849699398, 4.59817635270541, 4.603927855711422, 4.609679358717434, 4.615430861723446, 4.621182364729458, 4.626933867735471, 4.632685370741482, 4.638436873747495, 4.644188376753506, 4.649939879759519, 4.65569138276553, 4.661442885771542, 4.667194388777554, 4.6729458917835665, 4.6786973947895785, 4.6844488977955905, 4.6902004008016025, 4.6959519038076145, 4.701703406813627, 4.7074549098196385, 4.7132064128256514, 4.718957915831663, 4.7247094188376755, 4.730460921843687, 4.7362124248496995, 4.741963927855711, 4.7477154308617235, 4.753466933867735, 4.759218436873748, 4.764969939879759, 4.770721442885772, 4.776472945891784, 4.782224448897796, 4.787975951903808, 4.79372745490982, 4.799478957915832, 4.805230460921844, 4.810981963927856, 4.816733466933867, 4.82248496993988, 4.828236472945891, 4.833987975951904, 4.839739478957915, 4.845490981963928, 4.85124248496994, 4.856993987975952, 4.862745490981964, 4.868496993987976, 4.874248496993988, 4.88])
+              .range(['#ffffccff', '#ffffccff', '#ffffcbff', '#ffffcaff', '#fffec9ff', '#fffec9ff', '#fffec8ff', '#fffdc7ff', '#fffdc7ff', '#fffdc6ff', '#fffdc5ff', '#fffcc5ff', '#fffcc4ff', '#fffcc3ff', '#fffbc2ff', '#fffbc2ff', '#fffbc1ff', '#fffbc0ff', '#fffac0ff', '#fffabfff', '#fffabeff', '#fff9bdff', '#fff9bdff', '#fff9bcff', '#fff9bbff', '#fff8bbff', '#fff8baff', '#fff8b9ff', '#fff7b8ff', '#fff7b8ff', '#fff7b7ff', '#fff7b6ff', '#fff6b6ff', '#fff6b5ff', '#fff6b4ff', '#fff5b4ff', '#fff5b3ff', '#fff5b2ff', '#fff4b1ff', '#fff4b1ff', '#fff4b0ff', '#fff4afff', '#fff3afff', '#fff3aeff', '#fff3adff', '#fff2acff', '#fff2acff', '#fff2abff', '#fff2aaff', '#fff1aaff', '#fff1a9ff', '#fff1a8ff', '#fff0a7ff', '#fff0a7ff', '#fff0a6ff', '#fff0a5ff', '#ffefa5ff', '#ffefa4ff', '#ffefa3ff', '#ffeea3ff', '#ffeea2ff', '#ffeea1ff', '#ffeea0ff', '#ffeda0ff', '#ffed9fff', '#ffed9eff', '#ffec9eff', '#ffec9dff', '#ffec9cff', '#ffeb9cff', '#ffeb9bff', '#ffeb9aff', '#ffea9aff', '#ffea99ff', '#ffea98ff', '#ffe998ff', '#ffe997ff', '#ffe996ff', '#ffe896ff', '#ffe895ff', '#ffe894ff', '#ffe794ff', '#ffe793ff', '#ffe792ff', '#ffe692ff', '#ffe691ff', '#ffe690ff', '#ffe68fff', '#ffe58fff', '#ffe58eff', '#ffe58dff', '#ffe48dff', '#ffe48cff', '#ffe48bff', '#ffe38bff', '#ffe38aff', '#ffe389ff', '#ffe289ff', '#ffe288ff', '#ffe287ff', '#ffe187ff', '#ffe186ff', '#ffe185ff', '#ffe085ff', '#ffe084ff', '#ffe083ff', '#ffdf83ff', '#ffdf82ff', '#ffdf81ff', '#ffde81ff', '#ffde80ff', '#ffde7fff', '#ffdd7fff', '#ffdd7eff', '#ffdd7dff', '#ffdc7dff', '#ffdc7cff', '#ffdc7bff', '#ffdc7bff', '#ffdb7aff', '#ffdb79ff', '#ffdb78ff', '#ffda78ff', '#ffda77ff', '#ffda76ff', '#fed976ff', '#fed975ff', '#fed874ff', '#fed774ff', '#fed773ff', '#fed672ff', '#fed572ff', '#fed571ff', '#fed470ff', '#fed470ff', '#fed36fff', '#fed26eff', '#fed26eff', '#fed16dff', '#fed06cff', '#fed06cff', '#fecf6bff', '#fecf6aff', '#fece6aff', '#fecd69ff', '#fecd68ff', '#fecc68ff', '#fecb67ff', '#fecb66ff', '#feca66ff', '#feca65ff', '#fec964ff', '#fec864ff', '#fec863ff', '#fec762ff', '#fec662ff', '#fec661ff', '#fec560ff', '#fec45fff', '#fec45fff', '#fec35eff', '#fec35dff', '#fec25dff', '#fec15cff', '#fec15bff', '#fec05bff', '#febf5aff', '#febf59ff', '#febe59ff', '#febe58ff', '#febd57ff', '#febc57ff', '#febc56ff', '#febb55ff', '#feba55ff', '#feba54ff', '#feb953ff', '#feb953ff', '#feb852ff', '#feb751ff', '#feb751ff', '#feb650ff', '#feb54fff', '#feb54fff', '#feb44eff', '#feb44dff', '#feb34dff', '#feb24cff', '#feb24cff', '#feb14bff', '#feb04bff', '#feb04bff', '#feaf4bff', '#feaf4aff', '#feae4aff', '#feae4aff', '#fead4aff', '#feac49ff', '#feac49ff', '#feab49ff', '#feab48ff', '#feaa48ff', '#fea948ff', '#fea948ff', '#fea847ff', '#fea847ff', '#fea747ff', '#fea647ff', '#fea646ff', '#fea546ff', '#fea546ff', '#fea446ff', '#fea345ff', '#fea345ff', '#fea245ff', '#fea245ff', '#fea144ff', '#fea044ff', '#fea044ff', '#fe9f44ff', '#fe9f43ff', '#fe9e43ff', '#fe9d43ff', '#fe9d43ff', '#fe9c42ff', '#fe9c42ff', '#fe9b42ff', '#fe9a42ff', '#fe9a41ff', '#fe9941ff', '#fe9941ff', '#fe9840ff', '#fe9740ff', '#fe9740ff', '#fe9640ff', '#fe963fff', '#fe953fff', '#fe943fff', '#fe943fff', '#fe933eff', '#fe933eff', '#fe923eff', '#fe923eff', '#fe913dff', '#fe903dff', '#fe903dff', '#fe8f3dff', '#fe8f3cff', '#fe8e3cff', '#fe8d3cff', '#fd8d3cff', '#fd8c3bff', '#fd8b3bff', '#fd8a3bff', '#fd883aff', '#fd873aff', '#fd863aff', '#fd853aff', '#fd8439ff', '#fd8339ff', '#fd8239ff', '#fd8138ff', '#fd8038ff', '#fd7f38ff', '#fd7e38ff', '#fd7d37ff', '#fd7c37ff', '#fd7b37ff', '#fd7a36ff', '#fd7936ff', '#fd7836ff', '#fd7736ff', '#fd7635ff', '#fd7535ff', '#fd7435ff', '#fd7334ff', '#fd7234ff', '#fd7134ff', '#fd7033ff', '#fd6f33ff', '#fd6e33ff', '#fd6d33ff', '#fd6c32ff', '#fd6b32ff', '#fd6a32ff', '#fd6931ff', '#fd6831ff', '#fd6731ff', '#fd6631ff', '#fd6530ff', '#fd6430ff', '#fd6330ff', '#fd622fff', '#fd612fff', '#fd602fff', '#fd5f2fff', '#fd5e2eff', '#fd5d2eff', '#fd5c2eff', '#fd5b2dff', '#fd5a2dff', '#fd592dff', '#fd582dff', '#fd572cff', '#fd562cff', '#fd552cff', '#fd542bff', '#fd532bff', '#fd522bff', '#fd512aff', '#fd502aff', '#fd4f2aff', '#fc4e2aff', '#fc4d29ff', '#fc4c29ff', '#fb4b29ff', '#fb4a29ff', '#fa4a29ff', '#fa4928ff', '#fa4828ff', '#f94728ff', '#f94628ff', '#f84527ff', '#f84427ff', '#f84427ff', '#f74327ff', '#f74226ff', '#f64126ff', '#f64026ff', '#f63f26ff', '#f53f26ff', '#f53e25ff', '#f43d25ff', '#f43c25ff', '#f43b25ff', '#f33a24ff', '#f33a24ff', '#f23924ff', '#f23824ff', '#f23724ff', '#f13623ff', '#f13523ff', '#f03523ff', '#f03423ff', '#f03322ff', '#ef3222ff', '#ef3122ff', '#ee3022ff', '#ee3022ff', '#ee2f21ff', '#ed2e21ff', '#ed2d21ff', '#ec2c21ff', '#ec2b20ff', '#ec2b20ff', '#eb2a20ff', '#eb2920ff', '#ea281fff', '#ea271fff', '#ea261fff', '#e9261fff', '#e9251fff', '#e8241eff', '#e8231eff', '#e8221eff', '#e7211eff', '#e7211dff', '#e6201dff', '#e61f1dff', '#e61e1dff', '#e51d1dff', '#e51c1cff', '#e41b1cff', '#e41b1cff', '#e31a1cff', '#e3191cff', '#e2191cff', '#e2181cff', '#e1181cff', '#e0181cff', '#e0171dff', '#df171dff', '#df161dff', '#de161dff', '#dd161dff', '#dd151dff', '#dc151eff', '#dc141eff', '#db141eff', '#da131eff', '#da131eff', '#d9131eff', '#d9121eff', '#d8121fff', '#d7111fff', '#d7111fff', '#d6111fff', '#d5101fff', '#d5101fff', '#d40f20ff', '#d40f20ff', '#d30e20ff', '#d20e20ff', '#d20e20ff', '#d10d20ff', '#d10d21ff', '#d00c21ff', '#cf0c21ff', '#cf0b21ff', '#ce0b21ff', '#ce0b21ff', '#cd0a22ff', '#cc0a22ff', '#cc0922ff', '#cb0922ff', '#ca0922ff', '#ca0822ff', '#c90822ff', '#c90723ff', '#c80723ff', '#c70623ff', '#c70623ff', '#c60623ff', '#c60523ff', '#c50524ff', '#c40424ff', '#c40424ff', '#c30424ff', '#c30324ff', '#c20324ff', '#c10225ff', '#c10225ff', '#c00125ff', '#bf0125ff', '#bf0125ff', '#be0025ff', '#be0026ff', '#bd0026ff', '#bc0026ff', '#bb0026ff', '#ba0026ff', '#b90026ff', '#b80026ff', '#b70026ff', '#b60026ff', '#b50026ff', '#b40026ff', '#b30026ff', '#b20026ff', '#b10026ff', '#b00026ff', '#af0026ff', '#ae0026ff', '#ad0026ff', '#ac0026ff', '#ab0026ff', '#aa0026ff', '#a90026ff', '#a80026ff', '#a70026ff', '#a60026ff', '#a50026ff', '#a40026ff', '#a30026ff', '#a20026ff', '#a10026ff', '#a00026ff', '#9f0026ff', '#9e0026ff', '#9d0026ff', '#9c0026ff', '#9b0026ff', '#9b0026ff', '#9a0026ff', '#990026ff', '#980026ff', '#970026ff', '#960026ff', '#950026ff', '#940026ff', '#930026ff', '#920026ff', '#910026ff', '#900026ff', '#8f0026ff', '#8e0026ff', '#8d0026ff', '#8c0026ff', '#8b0026ff', '#8a0026ff', '#890026ff', '#880026ff', '#870026ff', '#860026ff', '#850026ff', '#840026ff', '#830026ff', '#820026ff', '#810026ff', '#800026ff']);
+    
+
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.x = d3.scale.linear()
+              .domain([2.01, 4.88])
+              .range([0, 450 - 50]);
+
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.legend = L.control({position: 'topright'});
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.legend.addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.xAxis = d3.svg.axis()
+        .scale(color_map_4fd8290d7a16f4be4169d9cd8886e055.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([2.01, 2.36875, 2.7275, 3.0862499999999997, 3.445, 3.80375, 4.1625, 4.52125, 4.88]);
+
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.g = color_map_4fd8290d7a16f4be4169d9cd8886e055.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.g.selectAll("rect")
+        .data(color_map_4fd8290d7a16f4be4169d9cd8886e055.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_4fd8290d7a16f4be4169d9cd8886e055.x(color_map_4fd8290d7a16f4be4169d9cd8886e055.color.domain()[i - 1]) : color_map_4fd8290d7a16f4be4169d9cd8886e055.x.range()[0],
+            x1: i < color_map_4fd8290d7a16f4be4169d9cd8886e055.color.domain().length ? color_map_4fd8290d7a16f4be4169d9cd8886e055.x(color_map_4fd8290d7a16f4be4169d9cd8886e055.color.domain()[i]) : color_map_4fd8290d7a16f4be4169d9cd8886e055.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_4fd8290d7a16f4be4169d9cd8886e055.g.call(color_map_4fd8290d7a16f4be4169d9cd8886e055.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Tasa de deserci\u00f3n escolar (%)");
+    
+            tile_layer_28e06929850f36d70ff6780a053e483f.addTo(map_6e7ffc9c3b409332ce3479086dbe225d);
+        
+    
+                marker_74a43383d472c1ad8c1405441715f5ce.setIcon(div_icon_b2a5729782d111fb79a780d24be58614);
+            
+    
+                marker_c4c18dd4dc195d0ef27988de017a41cf.setIcon(div_icon_f4360781bfe996c9a25d82912653a577);
+            
+    
+                marker_bcdc07ddd286f917736b58468dfc0b6c.setIcon(div_icon_2f211d3c7482f76722dae577992b16ab);
+            
+    
+                marker_213855672c42237613878712295ddf70.setIcon(div_icon_82950b746a4b4f8a6e3fc607c11112c5);
+            
+    
+                marker_255133a5f32c20ea975d8ef42de0af02.setIcon(div_icon_76fe0960433284de4aa0288853a93990);
+            
+    
+                marker_fcae161878fd54ef84f96a260fd4a5cf.setIcon(div_icon_75aae9c84a9038f31946101e595f9ea6);
+            
+    
+                marker_44ee097dccf4f5e0c8580abf34a300b4.setIcon(div_icon_6bdef0f17b0a5f7b17ffe855c7da4096);
+            
+    
+                marker_0bc66c1e55bfcd0c8658756bc4317d89.setIcon(div_icon_749946e013573bb99350733959dc4d2e);
+            
+    
+                marker_1ace67046f97a38dba07459f3f25240e.setIcon(div_icon_66ab2b0b28d8bb9e8d1ef30da940a169);
+            
+</script>
+</html>
